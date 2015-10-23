@@ -1,8 +1,8 @@
 #memberinfo {
     display: -webkit-flex;
     display:         flex;
-    -webkit-flex-flow: row;
-            flex-flow: row;    
+    -webkit-flex-flow:  row wrap;
+            flex-flow:  row wrap;
 }
 
 .infobox {
