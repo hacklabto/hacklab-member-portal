@@ -1,0 +1,7 @@
+%ul
+  - @waivers.each do |waiver|
+    %li
+      %a{:href => "/waivers/#{waiver[:id]}"}= waiver[:name]
+      (signed by
+      =@waiver_signatures.where(:waiver_id => waiver[:id]).group_and_count(:waiver_id).count
+      active members)

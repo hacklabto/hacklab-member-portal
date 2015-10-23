@@ -1,0 +1,39 @@
+%link{rel: :stylesheet, type: "text/css", href: "/css/member.css"}
+%div#memberinfo
+  %div.infobox
+    %header
+      %h3 General Information
+    %content
+      %table{style: "text-align: center;"}
+        %tr
+          %td{colspan: 2}
+            %p Name
+            %input{disabled: true, value: @member_info[:name]}
+        %tr
+          %td
+            %p Nickname
+            %input{disabled: true, value: @member_info[:nickname]}
+          %td
+            %p Username
+            %input{disabled: true, value: @member_info[:username]}
+        %tr
+          %td
+            %p Contact Email
+            %input{disabled: true, value: @member_info[:contact_email]}
+          %td
+            %p List Email
+            %input{disabled: true, value: @member_info[:list_email]}
+  %div.infobox
+    %header
+      %h3 Waivers
+    %content  
+      %table{style: "text-align: center;"}
+        %tr
+          - @waivers.each do |waiver|
+            %td
+              = waiver[:name]
+            %td
+              - if(!waiver[:signed]) then
+                %a{href: "/waivers/1/sign/#{@member_info[:username]}"}Sign Now
+              - else
+                Already Signed

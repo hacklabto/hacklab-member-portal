@@ -1,0 +1,4 @@
+%ul
+  - @members.each do |member_info|
+    %li
+      %a{:href => "/members/#{member_info[:id]}"}= member_info[:nickname]

@@ -1,0 +1,22 @@
+%link{rel: :stylesheet, type: "text/css", href: "/css/log.css"}
+%table
+  %tr
+    %th
+      Time Logged
+    %th
+      Member Name
+    %th
+      Entry Type
+    %th
+      Log Message
+  - @log_entries.each do |entry|  
+    %tr
+      %td
+        =entry[:time_logged]
+      %td
+        =entry[:name]
+        (#{entry[:nickname]})
+      %td
+        =entry[:type]
+      %td
+        =entry[:content]

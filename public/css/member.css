@@ -1,0 +1,32 @@
+#memberinfo {
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-flex-flow: row;
+            flex-flow: row;    
+}
+
+.infobox {
+  padding: 20px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-flex-flow: column;
+          flex-flow: column;
+}
+
+.infobox > header {
+  border: 1px solid black;
+  background-color: #ddd;
+  min-height: 50px;
+  display: block;
+  text-align: center;
+  flex: 1 6 5%;
+  order: 1;
+}
+
+.infobox > content {
+  text-align: center;
+  border: 1px solid black;
+  flex: 3 1 95%;
+  order: 2;
+}
+

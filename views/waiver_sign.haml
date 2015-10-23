@@ -1,0 +1,38 @@
+%head
+  %script{:src => "/scripts/signature_pad.js"}
+  %link{:rel => "stylesheet", :type => "text/css", :href => "/css/main.css"}
+  %link{:rel => "stylesheet", :type => "text/css", :href => "/css/signature.css"}
+%p
+  =@waiver_content
+
+%form{:method => :post, :onSubmit => "return submitWaiver()"}
+  %table{:style => "text-align: center;"}
+    %tr
+      %td
+        Member Username
+      %td
+        Witness Username
+      %td
+    %tr
+      %td
+        %input{:type => :text, :id => :member_username, :name => :member_username, :value => @member_username, :disabled => true}
+      %td
+        %input{:type => :text, :id => :witness_username, :name => :witness_username, :value => @user}
+    %tr
+      %td
+        %canvas.signature_box{:id => :member_sig, :width => 500, :height => 100}
+      %td
+        %canvas.signature_box{:id => :witness_sig, :width => 500, :height => 100}
+    %tr
+      %td
+        %button{:type => :button, :onClick => "member_sig_pad.clear();"} Clear Signature
+      %td
+        %button{:type => :button, :onClick => "witness_sig_pad.clear();"} Clear Signature
+    %tr
+      %td{:colspan => 2}
+        %input{:type => :hidden, :id => "member_sigdata", :name => "member_sigdata"}
+        %input{:type => :hidden, :id => "witness_sigdata", :name => "witness_sigdata"}
+        %input{:type => :submit, :value => "Submit Signed Waiver"}
+
+%script{:src => "/scripts/waivers.js"}
+

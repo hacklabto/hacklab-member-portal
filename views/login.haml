@@ -1,0 +1,16 @@
+%form{method: :post}
+  %table
+    %tr
+      %td
+        Username:
+      %td
+        %input{name: "username"}
+    %tr
+      %td
+        Password:
+      %td
+        %input{name: "password", type: "password"}
+    %tr
+      %td{colspan: 2, style: "text-align: center"}
+        %input{type: :submit, value: "Log In"}
+  

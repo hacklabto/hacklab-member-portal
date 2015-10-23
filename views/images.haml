@@ -1,0 +1,7 @@
+%table
+  - @images.each do |image|
+    %tr
+      %td
+        =image[:id]
+      %td
+        %img{:src => "/images/#{image[:id]}"}

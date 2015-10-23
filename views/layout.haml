@@ -1,0 +1,33 @@
+%html
+  %head
+    %title HackLab.TO Member Portal
+    %link{rel: "stylesheet", type: "text/css", href: "/css/main.css"}
+  %body
+    %div#topbox
+      %header
+        -#%img{src: "/images/logo.svg", height: 120}
+        %h1 HackLab.TO Member Portal
+      %infobar
+        %p.username #{@user ? "Logged in as #{@user}" : "Not logged in."}
+        %p.status #{@member_status ? "Membership Status: #{@member_status}" : ""}
+    %div#mainbox
+      %sidebar
+        %ul.undecorated
+          - if(is_ops?) then
+            %li
+              %a{href: "/members"} Members
+            %li
+              %a{href: "/log"} Log
+            %li
+              %a{href: "/waivers"} Waivers
+            %li
+              %a{href: "/images"} Images
+            %li &nbsp;
+          %li
+            %a{href: "/members/#{@member_id}"} Profile
+          %li Password
+          %li
+            %a{href: "/logout"} Log Out
+      %content
+        =yield
+
