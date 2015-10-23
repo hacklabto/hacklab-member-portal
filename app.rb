@@ -11,6 +11,7 @@ require_relative 'routes/waivers'
 require_relative 'routes/members'
 require_relative 'routes/images'
 require_relative 'routes/log'
+require_relative 'routes/password'
 
 class MemberApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
@@ -51,5 +52,6 @@ class MemberApp < Sinatra::Base
   register Sinatra::MemberApp::Routing::Members
   register Sinatra::MemberApp::Routing::Images
   register Sinatra::MemberApp::Routing::Log
+  register Sinatra::MemberApp::Routing::Password
 end
 

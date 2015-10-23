@@ -1,5 +1,8 @@
 db_url: 'mysql://username:password@dbhost/dbname'
-ldap_bind_string: "uid=USERNAME,ou=People,dc=example,dc=hackerspace"
+ldap:
+    auth_host: 'localhost'
+    change_host: 'readwrite-ldaphost'
+    bind_string: "uid=USERNAME,ou=People,dc=example,dc=hackerspace"
 ops_users:
     - opsperson
     - otheropsperson
