@@ -30,7 +30,7 @@
       %table{style: "text-align: center;"}
         %tr
           - @waivers.each do |waiver|
-            %td
+            %td{style: 'padding-right: 0.5cm;'}
               = waiver[:name]
             %td
               - if(!waiver[:signed]) then
@@ -51,9 +51,9 @@
             Log Message
         - @log_entries.each do |entry|
           %tr
-            %td
+            %td{style: 'padding-right: 0.5cm;'}
               =entry[:time_logged]
-            %td
+            %td{style: 'padding-right: 0.5cm;'}
               =entry[:type]
             %td
               =entry[:content]
