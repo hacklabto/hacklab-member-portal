@@ -37,3 +37,23 @@
                 %a{href: "/waivers/1/sign/#{@member_info[:username]}"}Sign Now
               - else
                 Already Signed
+  %div.infobox
+    %header
+      %h3 Member Log
+    %content
+      %table
+        %tr
+          %th
+            Time Logged
+          %th
+            Entry Type
+          %th
+            Log Message
+        - @log_entries.each do |entry|
+          %tr
+            %td
+              =entry[:time_logged]
+            %td
+              =entry[:type]
+            %td
+              =entry[:content]
